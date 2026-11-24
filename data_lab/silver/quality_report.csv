@@ -1,0 +1,15 @@
+dataset,reason,rows
+customers,test account,2
+logs,error event,35
+logs,debug/test event,4
+logs,empty action,2
+logs,no user,1
+logs,test account,1
+sales,duplicated order,2
+sales,test account,2
+sales,amount <= 0,1
+sales,amount is not a number,1
+sales,customer not in customer file,1
+sales,empty customer id,1
+sales,outlier amount,1
+sales,test product,1

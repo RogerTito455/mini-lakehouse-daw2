@@ -1,0 +1,168 @@
+
+============================================================
+PART 1 - BRONZE
+============================================================
+
+File types:
+  ventas.csv    -> CSV, structured        200 rows (+17 blank lines, Windows line endings: True)
+  clientes.json -> JSON, semi-structured  250 records
+  logs.txt      -> text log               205 events (+2 blank lines)
+
+ventas.csv (first rows)
+ id_pedido id_cliente producto importe
+        1        101  teclado      30
+        2        102    raton      20
+        3        101  monitor     200
+        4        103  teclado      30
+        5        999  monitor     150
+        6        104    raton     -10
+        7        105  teclado     abc
+        8        106  monitor     300
+
+clientes.json (first rows)
+ id_cliente nombre pais
+       101    Ana   ES
+       102   Luis   ES
+       103  Maria   FR
+       104 Carlos   ES
+       105  Lucia   IT
+       106  Pedro   PT
+
+logs.txt parsed (first rows)
+  line level user  action
+    1  INFO  101   login
+    2  INFO  102   login
+    3  INFO  103  compra
+    4 ERROR  999   login
+    5  INFO  104  logout
+    6  INFO  105  compra
+    7  WARN  106 timeout
+
+Issues found in Bronze:
+  Sales with empty customer id: ['15']
+  Sales of customers not in clientes.json: [['5', '999']]
+  Amount not a number: ['7']
+  Amount <= 0: ['6', '29']
+  Product 'test': ['29']
+  Median price per product: {'monitor': 205.0, 'raton': 20.0, 'teclado': 30.0}
+  Repeated orders (same customer, product, amount): ['31', '32']
+  Customer ids stored as text: ['120']
+  Customers with empty name: [112]
+  Customers with no country or '??': [117, 138, 200]
+  Possible test accounts: [[200, 'TestUser'], [201, 'Debug']]
+  Customers with placeholder name (userN): 218
+  Country codes: {'ES': 225, 'FR': 8, 'IT': 6, 'PT': 4, 'DE': 3, '??': 2, nan: 1, 'UK': 1}
+  Log levels: {'INFO': 135, 'ERROR': 35, 'WARN': 31, 'DEBUG': 4}
+  Log lines without user: [22]
+  Log lines with empty action: [23, 117]
+  Log users that are not a number: ['abc', 'xyz']
+  Log users not in clientes.json: ['999']
+  Missing information: no dates, no currency, no quantity, no contact data
+  Revenue if we add the raw amounts: 26624.00 EUR (top 'customer': 201 with 10019.00 EUR)
+
+============================================================
+PART 2 - SILVER
+============================================================
+
+Rows before and after Silver:
+  sales      bronze=200  silver=190  rejected=10
+  customers  bronze=250  silver=248  rejected=2
+  logs       bronze=205  silver=162  rejected=43
+
+Rejected sales
+ dataset record                      data                        reason
+  sales      5  customer=999 monitor 150 customer not in customer file
+  sales      6    customer=104 raton -10                   amount <= 0
+  sales      7  customer=105 teclado abc        amount is not a number
+  sales     15 customer=(empty) raton 20             empty customer id
+  sales     29       customer=200 test 0                  test product
+  sales     30 customer=201 monitor 9999                outlier amount
+  sales     31   customer=101 teclado 30              duplicated order
+  sales     32   customer=101 teclado 30              duplicated order
+  sales    107   customer=200 teclado 30                  test account
+  sales    108     customer=201 raton 20                  test account
+
+Rejected customers
+   dataset record          data       reason
+customers    200 TestUser / ?? test account
+customers    201    Debug / ES test account
+
+Quality report (rejected rows per rule)
+   dataset                        reason  rows
+customers                  test account     2
+     logs                   error event    35
+     logs              debug/test event     4
+     logs                  empty action     2
+     logs                       no user     1
+     logs                  test account     1
+    sales              duplicated order     2
+    sales                  test account     2
+    sales                   amount <= 0     1
+    sales        amount is not a number     1
+    sales customer not in customer file     1
+    sales             empty customer id     1
+    sales                outlier amount     1
+    sales                  test product     1
+
+clean_sales (first rows)
+  order_id  customer_id  product  amount_eur
+        1          101 keyboard        30.0
+        2          102    mouse        20.0
+        3          101  monitor       200.0
+        4          103 keyboard        30.0
+        8          106  monitor       300.0
+
+clean_customers with missing info (not placeholder)
+  customer_id    name country_code  missing_info                quality_notes
+         112 Unknown           ES          True                      no name
+         117    Raul      Unknown          True                   no country
+         138   User8      Unknown          True placeholder name; no country
+  customers with missing_info = True: 220
+
+clean_logs levels: {'INFO': 131, 'WARN': 31}
+
+Saved in silver/: clean_sales.csv, clean_customers.csv, clean_logs.csv, rejected_records.csv, quality_report.csv
+
+============================================================
+PART 3 - GOLD
+============================================================
+
+Sales by customer (top 10 of 189 )
+  customer_id customer country_code  num_orders  total_sales  share_pct
+         106    Pedro           PT           1        300.0       1.83
+         101      Ana           ES           2        230.0       1.41
+         109    Elena           FR           1        220.0       1.35
+         112  Unknown           ES           1        210.0       1.28
+         120      Eva           ES           1        210.0       1.28
+         127  Gonzalo           ES           1        210.0       1.28
+         133    User3           IT           1        210.0       1.28
+         139    User9           ES           1        210.0       1.28
+         145   User15           IT           1        210.0       1.28
+         151   User21           ES           1        210.0       1.28
+  customers tied at 210 EUR: 30
+
+Sales by product
+  product  units_sold  revenue  avg_price  share_pct
+ monitor          64  13190.0     206.09      80.65
+keyboard          64   1920.0      30.00      11.74
+   mouse          62   1245.0      20.08       7.61
+
+Sales by country
+ country_code  customers  num_orders  revenue  share_pct
+          ES        166         167  14205.0      86.85
+          PT          4           4    730.0       4.46
+          IT          5           5    500.0       3.06
+          FR          8           8    420.0       2.57
+          DE          3           3    250.0       1.53
+     Unknown          2           2    220.0       1.35
+          GB          1           1     30.0       0.18
+
+Total revenue
+  total_revenue_eur  num_orders  num_customers  avg_order_eur  raw_revenue_eur
+           16355.0         190            189          86.08          26624.0
+  raw revenue is 62.8 % higher than the clean one
+
+Largest buyer: Pedro (id 106) with 300.00 EUR
+Product with most revenue: monitor with 13190.00 EUR
+
+Saved in gold/: sales_by_customer.csv, sales_by_product.csv, sales_by_country.csv, total_revenue.csv

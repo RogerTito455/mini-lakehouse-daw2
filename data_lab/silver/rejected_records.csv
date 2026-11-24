@@ -1,0 +1,56 @@
+dataset,record,data,reason
+customers,200,TestUser / ??,test account
+customers,201,Debug / ES,test account
+sales,5,customer=999 monitor 150,customer not in customer file
+sales,6,customer=104 raton -10,amount <= 0
+sales,7,customer=105 teclado abc,amount is not a number
+sales,15,customer=(empty) raton 20,empty customer id
+sales,29,customer=200 test 0,test product
+sales,30,customer=201 monitor 9999,outlier amount
+sales,31,customer=101 teclado 30,duplicated order
+sales,32,customer=101 teclado 30,duplicated order
+sales,107,customer=200 teclado 30,test account
+sales,108,customer=201 raton 20,test account
+logs,line 4,[ERROR] user=999 action=login,error event
+logs,line 11,[ERROR] user=110 action=compra,error event
+logs,line 15,[ERROR] user=abc action=login,error event
+logs,line 22,[INFO] user= action=compra,no user
+logs,line 23,[INFO] user=120 action=,empty action
+logs,line 24,[ERROR] user=121 action=login,error event
+logs,line 25,[DEBUG] user=122 action=test,debug/test event
+logs,line 27,[ERROR] user=999 action=compra,error event
+logs,line 34,[ERROR] user=130 action=compra,error event
+logs,line 41,[ERROR] user=137 action=login,error event
+logs,line 48,[ERROR] user=144 action=login,error event
+logs,line 54,[ERROR] user=150 action=compra,error event
+logs,line 61,[ERROR] user=157 action=login,error event
+logs,line 68,[ERROR] user=164 action=login,error event
+logs,line 74,[ERROR] user=170 action=compra,error event
+logs,line 81,[ERROR] user=177 action=login,error event
+logs,line 87,[ERROR] user=183 action=compra,error event
+logs,line 93,[ERROR] user=189 action=login,error event
+logs,line 99,[ERROR] user=195 action=compra,error event
+logs,line 104,[INFO] user=200 action=login,test account
+logs,line 105,[DEBUG] user=201 action=test,debug/test event
+logs,line 106,[DEBUG] user=202 action=test,debug/test event
+logs,line 107,[DEBUG] user=203 action=test,debug/test event
+logs,line 110,[ERROR] user=206 action=login,error event
+logs,line 117,[INFO] user=213 action=,empty action
+logs,line 119,[ERROR] user=215 action=login,error event
+logs,line 124,[ERROR] user=xyz action=compra,error event
+logs,line 128,[ERROR] user=223 action=compra,error event
+logs,line 134,[ERROR] user=229 action=login,error event
+logs,line 139,[ERROR] user=234 action=login,error event
+logs,line 144,[ERROR] user=239 action=login,error event
+logs,line 149,[ERROR] user=244 action=login,error event
+logs,line 154,[ERROR] user=249 action=login,error event
+logs,line 160,[ERROR] user=254 action=login,error event
+logs,line 165,[ERROR] user=259 action=login,error event
+logs,line 170,[ERROR] user=264 action=login,error event
+logs,line 175,[ERROR] user=269 action=login,error event
+logs,line 180,[ERROR] user=274 action=login,error event
+logs,line 185,[ERROR] user=279 action=login,error event
+logs,line 191,[ERROR] user=284 action=login,error event
+logs,line 196,[ERROR] user=289 action=login,error event
+logs,line 201,[ERROR] user=294 action=login,error event
+logs,line 206,[ERROR] user=299 action=login,error event

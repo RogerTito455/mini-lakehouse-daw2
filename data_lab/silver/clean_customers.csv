@@ -1,0 +1,249 @@
+customer_id,name,country_code,missing_info,quality_notes
+101,Ana,ES,False,
+102,Luis,ES,False,
+103,Maria,FR,False,
+104,Carlos,ES,False,
+105,Lucia,IT,False,
+106,Pedro,PT,False,
+107,Sofia,ES,False,
+108,Miguel,ES,False,
+109,Elena,FR,False,
+110,Jorge,ES,False,
+111,Ana,ES,False,
+112,Unknown,ES,True,no name
+113,Diego,DE,False,
+114,Laura,ES,False,
+115,Mario,IT,False,
+116,Sara,ES,False,
+117,Raul,Unknown,True,no country
+118,Nuria,ES,False,
+119,Alberto,GB,False,
+120,Eva,ES,False,
+121,Ivan,ES,False,
+122,Carmen,FR,False,
+123,Jose,ES,False,
+124,Marta,ES,False,
+125,Pablo,ES,False,
+126,Irene,ES,False,
+127,Gonzalo,ES,False,
+128,Clara,ES,False,
+129,Victor,ES,False,
+130,Rocio,ES,False,
+131,User1,ES,True,placeholder name
+132,User2,FR,True,placeholder name
+133,User3,IT,True,placeholder name
+134,User4,PT,True,placeholder name
+135,User5,ES,True,placeholder name
+136,User6,DE,True,placeholder name
+137,User7,ES,True,placeholder name
+138,User8,Unknown,True,placeholder name; no country
+139,User9,ES,True,placeholder name
+140,User10,ES,True,placeholder name
+141,User11,ES,True,placeholder name
+142,User12,ES,True,placeholder name
+143,User13,FR,True,placeholder name
+144,User14,ES,True,placeholder name
+145,User15,IT,True,placeholder name
+146,User16,ES,True,placeholder name
+147,User17,ES,True,placeholder name
+148,User18,PT,True,placeholder name
+149,User19,ES,True,placeholder name
+150,User20,ES,True,placeholder name
+151,User21,ES,True,placeholder name
+152,User22,FR,True,placeholder name
+153,User23,ES,True,placeholder name
+154,User24,ES,True,placeholder name
+155,User25,ES,True,placeholder name
+156,User26,DE,True,placeholder name
+157,User27,ES,True,placeholder name
+158,User28,IT,True,placeholder name
+159,User29,ES,True,placeholder name
+160,User30,ES,True,placeholder name
+161,User31,ES,True,placeholder name
+162,User32,ES,True,placeholder name
+163,User33,ES,True,placeholder name
+164,User34,FR,True,placeholder name
+165,User35,ES,True,placeholder name
+166,User36,PT,True,placeholder name
+167,User37,ES,True,placeholder name
+168,User38,ES,True,placeholder name
+169,User39,ES,True,placeholder name
+170,User40,ES,True,placeholder name
+171,User41,ES,True,placeholder name
+172,User42,ES,True,placeholder name
+173,User43,IT,True,placeholder name
+174,User44,ES,True,placeholder name
+175,User45,ES,True,placeholder name
+176,User46,FR,True,placeholder name
+177,User47,ES,True,placeholder name
+178,User48,ES,True,placeholder name
+179,User49,ES,True,placeholder name
+180,User50,ES,True,placeholder name
+181,User51,ES,True,placeholder name
+182,User52,ES,True,placeholder name
+183,User53,ES,True,placeholder name
+184,User54,ES,True,placeholder name
+185,User55,ES,True,placeholder name
+186,User56,ES,True,placeholder name
+187,User57,ES,True,placeholder name
+188,User58,ES,True,placeholder name
+189,User59,ES,True,placeholder name
+190,User60,ES,True,placeholder name
+191,User61,ES,True,placeholder name
+192,User62,ES,True,placeholder name
+193,User63,ES,True,placeholder name
+194,User64,ES,True,placeholder name
+195,User65,ES,True,placeholder name
+196,User66,ES,True,placeholder name
+197,User67,ES,True,placeholder name
+198,User68,ES,True,placeholder name
+199,User69,ES,True,placeholder name
+202,User70,ES,True,placeholder name
+203,User71,ES,True,placeholder name
+204,User72,ES,True,placeholder name
+205,User73,ES,True,placeholder name
+206,User74,ES,True,placeholder name
+207,User75,ES,True,placeholder name
+208,User76,ES,True,placeholder name
+209,User77,ES,True,placeholder name
+210,User78,ES,True,placeholder name
+211,User79,ES,True,placeholder name
+212,User80,ES,True,placeholder name
+213,User81,ES,True,placeholder name
+214,User82,ES,True,placeholder name
+215,User83,ES,True,placeholder name
+216,User84,ES,True,placeholder name
+217,User85,ES,True,placeholder name
+218,User86,ES,True,placeholder name
+219,User87,ES,True,placeholder name
+220,User88,ES,True,placeholder name
+221,User89,ES,True,placeholder name
+222,User90,ES,True,placeholder name
+223,User91,ES,True,placeholder name
+224,User92,ES,True,placeholder name
+225,User93,ES,True,placeholder name
+226,User94,ES,True,placeholder name
+227,User95,ES,True,placeholder name
+228,User96,ES,True,placeholder name
+229,User97,ES,True,placeholder name
+230,User98,ES,True,placeholder name
+231,User99,ES,True,placeholder name
+232,User100,ES,True,placeholder name
+233,User101,ES,True,placeholder name
+234,User102,ES,True,placeholder name
+235,User103,ES,True,placeholder name
+236,User104,ES,True,placeholder name
+237,User105,ES,True,placeholder name
+238,User106,ES,True,placeholder name
+239,User107,ES,True,placeholder name
+240,User108,ES,True,placeholder name
+241,User109,ES,True,placeholder name
+242,User110,ES,True,placeholder name
+243,User111,ES,True,placeholder name
+244,User112,ES,True,placeholder name
+245,User113,ES,True,placeholder name
+246,User114,ES,True,placeholder name
+247,User115,ES,True,placeholder name
+248,User116,ES,True,placeholder name
+249,User117,ES,True,placeholder name
+250,User118,ES,True,placeholder name
+251,User119,ES,True,placeholder name
+252,User120,ES,True,placeholder name
+253,User121,ES,True,placeholder name
+254,User122,ES,True,placeholder name
+255,User123,ES,True,placeholder name
+256,User124,ES,True,placeholder name
+257,User125,ES,True,placeholder name
+258,User126,ES,True,placeholder name
+259,User127,ES,True,placeholder name
+260,User128,ES,True,placeholder name
+261,User129,ES,True,placeholder name
+262,User130,ES,True,placeholder name
+263,User131,ES,True,placeholder name
+264,User132,ES,True,placeholder name
+265,User133,ES,True,placeholder name
+266,User134,ES,True,placeholder name
+267,User135,ES,True,placeholder name
+268,User136,ES,True,placeholder name
+269,User137,ES,True,placeholder name
+270,User138,ES,True,placeholder name
+271,User139,ES,True,placeholder name
+272,User140,ES,True,placeholder name
+273,User141,ES,True,placeholder name
+274,User142,ES,True,placeholder name
+275,User143,ES,True,placeholder name
+276,User144,ES,True,placeholder name
+277,User145,ES,True,placeholder name
+278,User146,ES,True,placeholder name
+279,User147,ES,True,placeholder name
+280,User148,ES,True,placeholder name
+281,User149,ES,True,placeholder name
+282,User150,ES,True,placeholder name
+283,User151,ES,True,placeholder name
+284,User152,ES,True,placeholder name
+285,User153,ES,True,placeholder name
+286,User154,ES,True,placeholder name
+287,User155,ES,True,placeholder name
+288,User156,ES,True,placeholder name
+289,User157,ES,True,placeholder name
+290,User158,ES,True,placeholder name
+291,User159,ES,True,placeholder name
+292,User160,ES,True,placeholder name
+293,User161,ES,True,placeholder name
+294,User162,ES,True,placeholder name
+295,User163,ES,True,placeholder name
+296,User164,ES,True,placeholder name
+297,User165,ES,True,placeholder name
+298,User166,ES,True,placeholder name
+299,User167,ES,True,placeholder name
+300,User168,ES,True,placeholder name
+301,User169,ES,True,placeholder name
+302,User170,ES,True,placeholder name
+303,User171,ES,True,placeholder name
+304,User172,ES,True,placeholder name
+305,User173,ES,True,placeholder name
+306,User174,ES,True,placeholder name
+307,User175,ES,True,placeholder name
+308,User176,ES,True,placeholder name
+309,User177,ES,True,placeholder name
+310,User178,ES,True,placeholder name
+311,User179,ES,True,placeholder name
+312,User180,ES,True,placeholder name
+313,User181,ES,True,placeholder name
+314,User182,ES,True,placeholder name
+315,User183,ES,True,placeholder name
+316,User184,ES,True,placeholder name
+317,User185,ES,True,placeholder name
+318,User186,ES,True,placeholder name
+319,User187,ES,True,placeholder name
+320,User188,ES,True,placeholder name
+321,User189,ES,True,placeholder name
+322,User190,ES,True,placeholder name
+323,User191,ES,True,placeholder name
+324,User192,ES,True,placeholder name
+325,User193,ES,True,placeholder name
+326,User194,ES,True,placeholder name
+327,User195,ES,True,placeholder name
+328,User196,ES,True,placeholder name
+329,User197,ES,True,placeholder name
+330,User198,ES,True,placeholder name
+331,User199,ES,True,placeholder name
+332,User200,ES,True,placeholder name
+333,User201,ES,True,placeholder name
+334,User202,ES,True,placeholder name
+335,User203,ES,True,placeholder name
+336,User204,ES,True,placeholder name
+337,User205,ES,True,placeholder name
+338,User206,ES,True,placeholder name
+339,User207,ES,True,placeholder name
+340,User208,ES,True,placeholder name
+341,User209,ES,True,placeholder name
+342,User210,ES,True,placeholder name
+343,User211,ES,True,placeholder name
+344,User212,ES,True,placeholder name
+345,User213,ES,True,placeholder name
+346,User214,ES,True,placeholder name
+347,User215,ES,True,placeholder name
+348,User216,ES,True,placeholder name
+349,User217,ES,True,placeholder name
+350,User218,ES,True,placeholder name

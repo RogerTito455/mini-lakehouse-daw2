@@ -1,0 +1,8 @@
+country_code,customers,num_orders,revenue,share_pct
+ES,166,167,14205.0,86.85
+PT,4,4,730.0,4.46
+IT,5,5,500.0,3.06
+FR,8,8,420.0,2.57
+DE,3,3,250.0,1.53
+Unknown,2,2,220.0,1.35
+GB,1,1,30.0,0.18
